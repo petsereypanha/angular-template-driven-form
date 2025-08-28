@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { ContactListComponent } from './contact-list.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ContactListComponent
+  ],
   imports: [
     CommonModule,
-    FormsModule
+    RouterModule  // Add RouterModule for routerLink support
+  ],
+  exports: [
+    ContactListComponent
   ]
 })
 export class ContactListModule { }
