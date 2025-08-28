@@ -6,6 +6,7 @@
     <section>
       <nav>Name/Info</nav>
       <div>
+        <app-profile-icon-selector [(ngModel)]="contact.icon" name="icon" />
         <input type="hidden" [(ngModel)]="contact.id" name="id"/>
         <input placeholder="First Name"  [(ngModel)]="contact.firstName" required minlength="4" #firstName="ngModel"
                name="firstName" [class.error]="firstName.invalid && firstName.touched"/>
@@ -16,7 +17,6 @@
         <em *ngIf="lastName.errors?.['required'] && lastName.touched">Please enter a last name</em>
         <em *ngIf="lastName.errors?.['minlength'] && lastName.touched">Last name must be at least 4 characters</em>
         <input type="date" placeholder="Date of Birth" [(ngModel)]="contact.dateOfBirth" required #dateOfBirth="ngModel" name="dateOfBirth"/>
-        <em *ngIf="dateOfBirth.errors?.['required'] && dateOfBirth.touched">Please enter a date of birth</em>
         <div>
           <span>Favorites Ranking:</span>
           <input type="range" min="0" max="5" placeholder="Favorites Ranking" [(ngModel)]="contact.favoritesRanking" name="favoritesRanking"/>

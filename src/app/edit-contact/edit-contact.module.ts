@@ -1,17 +1,21 @@
-import { NgModule } from '@angular/core';
+import {forwardRef, NgModule, Provider} from '@angular/core';
     import { CommonModule } from '@angular/common';
-    import { FormsModule } from '@angular/forms';
+    import {FormsModule, NG_VALUE_ACCESSOR} from '@angular/forms';
     import { RestrictedWordsValidatorDirective } from '../validators/restricted-words.validator.directive';
     import { EditContactComponent } from './edit-contact.component';
+import {DateValueAccessorDirective} from '../date-value-accessor/date-value-accessor.directive';
+import {ProfileIconSelectorModule} from '../profile-icon-selector/profile-icon-selector.module';
 
     @NgModule({
       declarations: [
-        EditContactComponent
+        EditContactComponent,
       ],
       imports: [
         CommonModule,
         FormsModule,
-        RestrictedWordsValidatorDirective  // Import standalone directive instead of declaring
+        RestrictedWordsValidatorDirective,
+        DateValueAccessorDirective,
+        ProfileIconSelectorModule
       ]
     })
     export class EditContactModule { }
